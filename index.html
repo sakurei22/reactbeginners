@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="root"></div>
-</body>
-<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  </body>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-<script>
+  <script type="text/babel">
     const root = document.getElementById("root");
-    const h3 = React.createElement("h3", {
-        onMouseEnter: () => console.log("mouse Enter"),
-    }, "Hello im span");
 
-    const btn = React.createElement("button", 
-    {
-        onClick:() => console.log("im click"),
-    }, 
-    "click me");
+    const title = (
+      <h3 id="title" onMouseEnter={() => console.log("mouse Enter")}>
+        Hello im title
+      </h3>
+    );
 
-    const container = React.createElement("div", null, [h3, btn]);
+    const btn = <button onClick={() => console.log("click")}>click</button>;
+
+    const container = React.createElement("div", null, [title, btn]);
     ReactDOM.render(container, root);
-
-    
-</script>
+  </script>
 </html>
