@@ -16,15 +16,23 @@
   <script type="text/babel">
     const root = document.getElementById("root");
 
-    const title = (
+    const Title = () => (
       <h3 id="title" onMouseEnter={() => console.log("mouse Enter")}>
         Hello im title
       </h3>
     );
 
-    const btn = <button onClick={() => console.log("click")}>click</button>;
+    const Button = () => (
+      <button onClick={() => console.log("click")}>click</button>
+    );
 
-    const container = React.createElement("div", null, [title, btn]);
-    ReactDOM.render(container, root);
+    const Container = () => (
+      <div>
+        <button>Hello</button>
+        <Title />
+        <Button />
+      </div>
+    );
+    ReactDOM.render(<Container />, root);
   </script>
 </html>
