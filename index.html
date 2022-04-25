@@ -17,12 +17,16 @@
     const root = document.getElementById("root");
 
     function App() {
-      const [counter, modifier] = React.useState(0);
-      counter = 120;
+      const [counter, setCounter] = React.useState(0);
+      const onClick = () => {
+        //setCounter(counter + 1);
+        //현재 state를 확인 하고 더해줌
+        setCounter((current) => current + 1);
+      };
       return (
         <div>
-          <h3>Total Click : {data[0]}</h3>
-          <button>click</button>
+          <h3>Total Click : {counter}</h3>
+          <button onClick={onClick}>click</button>
         </div>
       );
     }
